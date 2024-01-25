@@ -9,11 +9,8 @@ import org.example.model.impl.FileWriterImpl;
 import org.example.validDate.ValidDate;
 import org.example.view.impl.ConsoleReadImpl;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
@@ -64,13 +61,6 @@ public class Main {
                 System.out.println(e);
             }
 
-//            try {
-//                Files.write(Paths.get("data"), );
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-
-//            File file = new File("C:\\Users\\Anton\\Downloads\\pr");
             try (FileWriter writer1 = new FileWriter("result.txt", true)) {
                 writer1.append(String.join(" ", list));
             } catch (IOException e) {
